@@ -28,6 +28,25 @@ public class CalculatorTest {
 
         // Controllo con entrambe gli input NaN
         assertThrows(IllegalArgumentException.class, () -> calculator.add(Float.NaN, Float.NaN));
+
+        // Controllo oltre limite max value
+        assertThrows(IllegalArgumentException.class, () -> calculator.add(Float.MAX_VALUE, 1.0f));
+        assertThrows(IllegalArgumentException.class, () -> calculator.add(1.0f, Float.MAX_VALUE));
     }
+
+    // Test sottrazione
+    @Test
+    @DisplayName("Subtraction test")
+    public void testSubtract(){}
+
+    // Test moltiplicatione
+    @Test
+    @DisplayName("Multiplication test")
+    public void testMultiply(){}
+
+    // Test divisione
+    @Test
+    @DisplayName("Division test")
+    public void testDivide(){}
 
 }
