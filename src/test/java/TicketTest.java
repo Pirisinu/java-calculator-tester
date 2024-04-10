@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class TicketTest {
     private Ticket ticket;
 
@@ -15,6 +17,14 @@ public class TicketTest {
     @Test
     @DisplayName("Ticket tester")
     void testCalculatePrice() {
-
+        // Normal ticket
+        ticket = new Ticket(100,30);
+        assertEquals(21.0, ticket.calculatePrice(),0.0);
+        // Under age ticket
+        ticket = new Ticket(100,14);
+        assertEquals(16.8, ticket.calculatePrice(),0.0);
+        // Over age ticket
+        ticket = new Ticket(100,80);
+        assertEquals(10.5, ticket.calculatePrice(),0.0);
     }
 }
