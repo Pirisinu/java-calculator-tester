@@ -13,8 +13,18 @@ public class Tiket {
         this.kilometers = kilometers;
         this.age = age;
     }
-
-    // Getter e Setter
     // Methods
+    public double calculatePrice(){
+        final double tiketPriceKM = 0.21;
+        int discount = 0;
+        if(this.age < 18){
+            discount = 20;
+        } else if (this.age > 65) {
+            discount = 50;
+        }
+        double discountValue = (this.kilometers * tiketPriceKM) * (discount / 100.0);
+        double priceTiket = (this.kilometers * tiketPriceKM) - discountValue;
+        return priceTiket;
+    }
 
 }
