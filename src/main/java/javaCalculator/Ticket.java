@@ -1,12 +1,12 @@
 package javaCalculator;
 
-public class Tiket {
+public class Ticket {
     // Attributes
     private int kilometers;
     private int age;
 
     // Constructor
-    public Tiket(int kilometers, int age) {
+    public Ticket(int kilometers, int age) {
         if (kilometers <= 0 || age <= 0) {
             throw new IllegalArgumentException("Kilometers and age must be positive numbers.");
         }
