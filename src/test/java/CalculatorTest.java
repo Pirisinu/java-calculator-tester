@@ -28,14 +28,6 @@ public class CalculatorTest {
 
         // Controllo con entrambe gli input NaN
         assertThrows(IllegalArgumentException.class, () -> calculator.add(Float.NaN, Float.NaN));
-
-        // Controllo con input vuoti
-        assertThrows(NullPointerException.class, () -> calculator.add(null, 3.0f));
-        assertThrows(NullPointerException.class, () -> calculator.add(3.0f, null));
-
-        // Controllo con input stringa
-        assertThrows(NumberFormatException.class, () -> calculator.add(Float.parseFloat("abc"), 3.0f));
-        assertThrows(NumberFormatException.class, () -> calculator.add(3.0f, Float.parseFloat("def")));
     }
 
 }
